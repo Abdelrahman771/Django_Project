@@ -1,0 +1,14 @@
+{% block showcar %}
+<h1>Car {{car.id}} details</h1>
+<div class="card" style="width: 18rem;">
+    <img src="{{car.image.url}}" class="card-img-top" alt="car image" />
+    <div class="card-body">
+      <h5 class="card-title">Name : {{car.name}}</h5>
+      <p class="card-title">Description : {{car.description}}</p>
+      <p class="card-title">Price : {{car.price}}</p>
+      <p class="card-title">Color : {{car.color}}</p>
+      <a href="{% url 'viewCars' %}" class = "btn btn-primary" 
+      >show all cars</a>
+    </div>
+  </div>
+  {% endblock showcar %}

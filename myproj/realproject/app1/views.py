@@ -1,43 +1,39 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Car
-from .forms import Carform
+from .models import Donation
+from .forms import Donationform
 from django.template import RequestContext
 # Create your views here.
-users=[{"Name":"Abdelrahman","Age":"24","salary":"6000"}
-            ,{"Name":"Ahmed","Age":"23","salary":"8000"}
-            ,{"Name":"Ali","Age":"23","salary":"7000"}]
-dict={"Data":users}
+
 def renderhtml(request):
-    return render(request, 'app1/index.html',dict)
+    return render(request, 'app1/index.html')
 
-def viewCars(request):
-   
-    return render(request,'app1/cars.html', {"cars":Car.objects.all()})
+def viewDonation(request):
+    return render(request,'app1/cars.html', {"cars":Donation.objects.all()})
 
-def createCar(request):
-    car = Carform(request.POST , request.FILES)
-    if car.is_valid():
-        car.save()
+def createDonation(request):
+    donation = Donationform(request.POST , request.FILES)
+    if donation.is_valid():
+        donation.save()
     else:
         print("not valid")
-    return render ( request , 'app1/createCar.html' , {"form":Carform})
+    return render ( request , 'app1/createCar.html' , {"form":Donationform})
 
-def showCarWithID(request,id):
-    car=Car.objects.get(pk=id)
+def showDonationWithID(request,id):
+    donation=Donation.objects.get(pk=id)
     # print(car)
-    return render(request, 'app1/carcards.html',{"car":car})
+    return render(request, 'app1/carcards.html',{"donation":donation})
 
-def deleteCarWithID(request,id):
-    car=Car.objects.get(pk=id)
-    car.delete()
-    return render (request, 'app1/cars.html',{"cars":Car.objects.all()})
+def deleteDonationWithID(request,id):
+    donation=Donation.objects.get(pk=id)
+    donation.delete()
+    return render (request, 'app1/cars.html',{"cars":Donation.objects.all()})
 
-def updateCarWithID(request,id):
-    car=Car.objects.get(pk=id)
-    form = Carform(request.POST or None , request.FILES or None , instance=car  )
+def updateDonationWithID(request,id):
+    donation=Donation.objects.get(pk=id)
+    form = Donationform(request.POST or None , request.FILES or None , instance=donation  )
     if form.is_valid():
         form.save()
     else:
         print("not valid")
-    return render(request, 'app1/updatecar.html',{"car":car,"form":form}) 
+    return render(request, 'app1/updatecar.html',{"donation":donation,"form":form}) 

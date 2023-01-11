@@ -1,6 +1,6 @@
 from django import forms
-from .models import Car
-class Carform(forms.ModelForm):
+from .models import Donation
+class Donationform(forms.ModelForm):
     class Meta :
-        model = Car
+        model = Donation
         fields ='__all__'

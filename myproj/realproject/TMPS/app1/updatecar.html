@@ -4,7 +4,7 @@
     <form action="" method = "POST" enctype="multipart/form-data">
         {% csrf_token %} {{form}}
         <input type="submit" value="Update car">
-        <a href="{% url 'viewCars'%}" class="btn btn-danger"> viewCar </a>
+        <a href="{% url 'viewDonation'%}" class="btn btn-danger"> viewProcesses </a>
     </form>
 </center>
 {% endblock content %}

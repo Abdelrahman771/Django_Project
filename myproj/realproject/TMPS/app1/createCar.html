@@ -1,10 +1,10 @@
 {% block content %}
     <center>
-    <h1 class="display-3" style="background-color:#000000;color:#FFFF99;">Create record</h1>
+    <h1 class="display-3" style="background-color:#000000;color:#FFFF99;">Create Donation</h1>
     <form action="" method = "POST" enctype="multipart/form-data">
         {% csrf_token %} {{form}}
         <input type="submit" value="save car">
-        <a href="{% url 'viewCars'%}" class="btn btn-danger"> viewCar </a>
+        <a href="{% url 'viewDonation'%}" class="btn btn-danger"> viewProcesses </a>
     </form>
 </center>
 {% endblock content %}

@@ -1,14 +1,13 @@
 {% block showcar %}
-<h1>Car {{car.id}} details</h1>
+<h1>Donation {{car.id}} details</h1>
 <div class="card" style="width: 18rem;">
-    <img src="{{car.image.url}}" class="card-img-top" alt="car image" />
+    <img src="{{donation.image.url}}" class="card-img-top" alt="car image" />
     <div class="card-body">
-      <h5 class="card-title">Name : {{car.name}}</h5>
-      <p class="card-title">Description : {{car.description}}</p>
-      <p class="card-title">Price : {{car.price}}</p>
-      <p class="card-title">Color : {{car.color}}</p>
-      <a href="{% url 'viewCars' %}" class = "btn btn-primary" 
-      >show all cars</a>
+      <h5 class="card-title">Name : {{donation.Name}}</h5>
+      <p class="card-title">Description : {{donation.Description}}</p>
+      <p class="card-title">Targetprice : {{donation.Targetprice}}</p>
+      <a href="{% url 'viewDonation' %}" class = "btn btn-primary" 
+      >Show All Processes</a>
     </div>
   </div>
   {% endblock showcar %}
